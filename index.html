@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sekpro AI - Asisten Sekretaris Digital</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f8fafc; color: #1e293b; line-height: 1.6; padding-bottom: 40px; }
+    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    
+    /* Header / Hero */
+    .hero { text-align: center; padding: 40px 20px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 24px; }
+    .avatar { width: 80px; height: 80px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; margin: 0 auto 16px; }
+    .badge { display: inline-block; background: #dcfce7; color: #15803d; font-size: 0.85rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+    .hero h1 { font-size: 2.2rem; color: #0f172a; margin-bottom: 8px; }
+    .hero p { font-size: 1.1rem; color: #64748b; }
+
+    /* Problem vs Solution */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+    @media (max-width: 640px) { .grid-2, .grid-3 { grid-template-columns: 1fr !important; } }
+    .card { background: #fff; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; }
+    .card-chaos { border-left: 4px solid #ef4444; background: #fef2f2; }
+    .card-solution { border-left: 4px solid #10b981; background: #f0fdf4; }
+    .card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+    .card-chaos h3 { color: #991b1b; }
+    .card-solution h3 { color: #166534; }
+    .card ul { list-style: none; }
+    .card li { margin-bottom: 8px; font-size: 0.95rem; }
+
+    /* Core Capabilities */
+    .section-title { text-align: center; font-size: 1.5rem; margin-bottom: 16px; color: #0f172a; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+    .feature-card { background: #fff; padding: 16px; border-radius: 12px; border: 1px solid #e2e8f0; text-align: center; }
+    .feature-icon { font-size: 2rem; margin-bottom: 8px; }
+    .feature-card h4 { color: #2563eb; margin-bottom: 6px; }
+    .feature-card p { font-size: 0.85rem; color: #64748b; }
+
+    /* Chat Simulation */
+    .sim-box { background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; padding: 16px; margin-bottom: 24px; }
+    .chat-area { min-height: 140px; background: #f8fafc; border-radius: 8px; padding: 12px; margin-bottom: 12px; border: 1px solid #f1f5f9; display: flex; flex-direction: column; gap: 8px; }
+    .msg { padding: 8px 12px; border-radius: 8px; font-size: 0.9rem; max-width: 80%; }
+    .msg-user { background: #2563eb; color: #fff; align-self: flex-end; }
+    .msg-bot { background: #e2e8f0; color: #1e293b; align-self: flex-start; }
+    .typing { font-style: italic; color: #94a3b8; font-size: 0.85rem; }
+    .btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn-sim { background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; cursor: pointer; transition: 0.2s; }
+    .btn-sim:hover { background: #e2e8f0; }
+
+    /* Footer & CTA */
+    .footer { text-align: center; background: #fff; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; }
+    .btn-cta { display: inline-block; background: #2563eb; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-bottom: 16px; transition: 0.2s; }
+    .btn-cta:hover { background: #1d4ed8; }
+    .footer p { font-size: 0.8rem; color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="avatar">🤖</div>
+      <div class="badge">🟢 Status: Active & Ready 24/7</div>
+      <h1>Sekpro AI</h1>
+      <p>Merangkum notulensi rapat otomatis dan melacak agenda harian Anda tanpa ribet.</p>
+    </section>
+
+    <!-- Problem & Solution -->
+    <div class="grid-2">
+      <div class="card card-chaos">
+        <h3>❌ The Chaos</h3>
+        <ul>
+          <li>• Sering lupa daftar tugas harian.</li>
+          <li>• Tidak sempat mencatat notulen rapat.</li>
+          <li>• File pekerjaan berceceran di mana-mana.</li>
+        </ul>
+      </div>
+      <div class="card card-solution">
+        <h3>✅ The Solution</h3>
+        <ul>
+          <li>• Reminder tugas otomatis via Email.</li>
+          <li>• Rekam & rangkum rapat via Google Meet.</li>
+          <li>• Rapikan file dengan persetujuan Anda.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Core Capabilities -->
+    <h2 class="section-title">Fitur & Integrasi Utama</h2>
+    <div class="grid-3">
+      <div class="feature-card">
+        <div class="feature-icon">📹</div>
+        <h4>Google Meet</h4>
+        <p>Merekam & mengekstrak ringkasan notulensi otomatis saat rapat selesai.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✉️</div>
+        <h4>Email Reminder</h4>
+        <p>Mengirimkan pengingat agenda harian langsung ke kotak masuk Anda.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📁</div>
+        <h4>Human-in-the-Loop</h4>
+        <p>Merapikan file berceceran dengan selalu meminta persetujuan (approval) Anda.</p>
+      </div>
+    </div>
+
+    <!-- Interactive Simulation -->
+    <div class="sim-box">
+      <h3 style="margin-bottom:12px; font-size:1.1rem;">Simulasi Interaktif Sekpro AI</h3>
+      <div class="chat-area" id="chatArea">
+        <div class="msg msg-bot">Halo! Saya Sekpro AI. Klik tombol di bawah untuk melihat aksi saya.</div>
+      </div>
+      <div class="btn-group">
+        <button class="btn-sim" onclick="runSim('notulen')">📝 Rangkum Meet</button>
+        <button class="btn-sim" onclick="runSim('reminder')">🔔 Cek Reminder</button>
+        <button class="btn-sim" onclick="runSim('organize')">📂 Rapikan File</button>
+      </div>
+    </div>
+
+    <!-- Footer & CTA -->
+    <footer class="footer">
+      <a href="https://wa.me/62811111111" target="_blank" class="btn-cta">Hubungi Sekpro AI via WhatsApp</a>
+      <p>Built with AI · AI Builder Bootcamp Showcase</p>
+    </footer>
+  </div>
+
+  <script>
+    function runSim(type) {
+      const area = document.getElementById('chatArea');
+      area.innerHTML = '';
+      
+      let uText = '', bText = '';
+      if(type === 'notulen') {
+        uText = 'Sekpro, rangkum rapat Google Meet tadi.';
+        bText = 'Notulensi Google Meet berhasil dibuat & poin keputusan utama telah disimpan!';
+      } else if(type === 'reminder') {
+        uText = 'Kirim jadwal tugas harian saya.';
+        bText = 'Daftar tugas harian telah dikirimkan ke Email Anda. Jangan lupa diperiksa!';
+      } else if(type === 'organize') {
+        uText = 'File di Drive saya berantakan nih.';
+        bText = 'Saya menemukan 12 file tak terstruktur. Minta persetujuan (Approval) untuk memindahkannya ke folder khusus?';
+      }
+
+      area.innerHTML += `<div class="msg msg-user">${uText}</div>`;
+      area.innerHTML += `<div class="typing" id="typeInd">Sekpro AI sedang mengetik...</div>`;
+
+      setTimeout(() => {
+        const ind = document.getElementById('typeInd');
+        if(ind) ind.remove();
+        area.innerHTML += `<div class="msg msg-bot">${bText}</div>`;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
